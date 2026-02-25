@@ -19,5 +19,6 @@ def read_metadata(filepath):
 
 def series_ok(series_meta):
     modality_ok = series_meta.get("Modality", "").upper() == "CT"
-    bodypart_ok = series_meta.get("BodyPartExamined", "").lower() in ["abdomen", "thorax", "thoraxabdomen"]
-    return modality_ok and bodypart_ok
+    bodypart_ok = series_meta.get("BodyPartExamined", "").lower() in ["abdomen", "thorax", "thoraxabdomen"] #or serie description contains "abdomen" or "thorax
+    seriedescription_ok = "abdomen" in series_meta.get("SeriesDescription", "").lower() or "thorax" in series_meta.get("SeriesDescription", "").lower()
+    return modality_ok and bodypart_ok and seriedescription_ok

@@ -23,11 +23,13 @@ def __execute_from_pacs():
         studies = query_studies(p["PatientID"], start_window, end_window)
 
         candidate_series = []
+
+        #sort(studies) neueste zuvor
+
         for study in studies:
             # Für jede Studie die Serien abfragen
             series_list  = query_series(study["StudyInstanceUID"])
             for s in series_list:
-
 
                 if not series_ok(s):
                     continue
@@ -39,7 +41,7 @@ def __execute_from_pacs():
                 meta = read_metadata(first_image_file)
                 s.update(meta)
                 candidate_series.append(s)
-                 
+                           
 
 
         best_series = select_best_series(candidate_series)

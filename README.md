@@ -5,11 +5,12 @@ Dieses Projekt zeigt die Pipeline, um die **beste CT-Serie aus PACS** für einen
 
 Workflow zur Auswahl der besten CT-Serie:
 
-1. **Patient & Diagnose-Datum**
+1. **Patient & Diagnose-Datum**  Neme, PIZ, Dates  01-01-2025 (15.02.2025) 30-04-2025  01.05.2025
    ↓
 2. **Studien abfragen**
    - CT-Studien
-   - Datum: Zeitfenster
+   - Datum: Zeitfenster   or Das richtige DATUM && PIZ
+   - Mod-Studies CT
    ↓
 3. **Serie-Level filtern**
    - Modality = CT

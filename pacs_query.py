@@ -42,7 +42,7 @@ def query_series(study_instance_uid):
     # Wichtige Serie-Level Tags
     ds.SeriesInstanceUID = ""
     ds.SeriesDescription = ""
-    ds.Modality = ""
+    ds.Modality = "CT"
     ds.BodyPartExamined = ""
 
     responses = assoc.send_c_find(ds, PatientRootQueryRetrieveInformationModelFind)
